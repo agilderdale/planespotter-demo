@@ -20,13 +20,13 @@ spec:
     spec:
       containers:
       - name: planespotter-frontend
-        image: nvpnathan/planespotter-frontend:v1
+        image: harbor.lab.local/agilderdale/planespotter-frontend:v1
         imagePullPolicy: Always
         env:
         - name: PLANESPOTTER_API_ENDPOINT
           value: planespotter-svc
       - name: telegraf
-        image: puckpuck/wavefront-telegraf
+        image: harbor.lab.local/agilderdale/puckpuck/wavefront-telegraf
         ports:
         - name: udp-statsd
           containerPort: 8125

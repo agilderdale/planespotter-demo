@@ -1,0 +1,21 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: default-deny-all
+spec:
+  podSelector: {}
+  ingress: []
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: cafe-allow-external
+spec:
+  podSelector:
+    matchLabels:
+      app: tea
+  podSelector:
+    matchLabels:
+      app: coffee
+  ingress:
+  - from: []

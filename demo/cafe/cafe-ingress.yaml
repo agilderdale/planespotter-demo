@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+
+kind: Ingress
+metadata:
+  name: cafe-ingress
+spec:
+  rules:
+  - host: cafe.mg.lab
+    http:
+      paths:
+      - path: /tea
+        backend:
+          serviceName: tea-svc
+          servicePort: 80
+      - path: /coffee
+        backend:
+          serviceName: coffee-svc
+          servicePort: 80
