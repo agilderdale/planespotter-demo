@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: coffee
-        image: nginxdemos/hello
+        image: harbor.lab.local/agilderdale/nginxdemos/hello
         ports:
         - containerPort: 80
 ---
@@ -32,6 +32,6 @@ spec:
     spec:
       containers:
       - name: tea
-        image: nginxdemos/hello
+        image: harbor.lab.local/agilderdale/nginxdemos/hello
         ports:
         - containerPort: 80
