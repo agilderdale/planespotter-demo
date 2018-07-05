@@ -86,7 +86,7 @@ spec:
         - name: config-map
           mountPath: /mnt/config-map
       - name: clone-mysql
-        image: gcr.io/google-samples/xtrabackup:1.0
+        image: harbor.lab.local/agilderdale/gcr.io/google-samples/xtrabackup:1.0
         command:
         - bash
         - "-c"
@@ -110,7 +110,7 @@ spec:
           mountPath: /etc/mysql/conf.d
       containers:
       - name: mysql
-        image: mysql:5.7
+        image: harbor.lab.local/agilderdale/mysql:5.7
         env:
         - name: MYSQL_ALLOW_EMPTY_PASSWORD
           value: "1"
@@ -141,7 +141,7 @@ spec:
           periodSeconds: 2
           timeoutSeconds: 1
       - name: xtrabackup
-        image: harbor.lab.local/gcr.io/google-samples/xtrabackup:1.0
+        image: harbor.lab.local/agilderdale/gcr.io/google-samples/xtrabackup:1.0
         ports:
         - name: xtrabackup
           containerPort: 3307
