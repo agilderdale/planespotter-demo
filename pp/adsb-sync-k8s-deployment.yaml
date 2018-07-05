@@ -13,11 +13,11 @@ spec:
     spec:
       containers:
       - name: redis-server
-        image: redis
+        image: harbor.lab.local/agilderdale/redis:latest
         ports:
         - containerPort: 6379
       - name: telegraf
-        image: puckpuck/wavefront-telegraf
+        image: harbor.lab.local/agilderdale/puckpuck/wavefront-telegraf
         ports:
         - name: udp-statsd
           containerPort: 8125
@@ -123,7 +123,7 @@ spec:
     spec:
       containers:
       - name: adsb-sync
-        image: yfauser/adsb-sync:1d791ea6e96eb50adb15e773d1d783f511618c97
+        image: harbor.lab.local/agilderdale/adsb-sync:1.0
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - name: config-volume
